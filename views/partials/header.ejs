@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Make site responsive on mobile/tablet -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Yelp Camp</title>
+		<script src="https://kit.fontawesome.com/032ade20fa.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+ -->
+		
+		
+		<link rel="stylesheet" href="/stylesheets/main.css">
+    </head>
+    <body>
+
+    <nav class="navbar navbar-expand bg-dark">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href='/'>YelpCamp</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto ">
+				<% if(!currentUser){ %>
+<li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+<li class="nav-item"><a class="nav-link" href="/register">Sign Up</a></li>
+				<% } 
+				else{ %>
+		<li class="nav-item"><a class="nav-link" href="/users/<%=currentUser.id %>"><i class="fas fa-user"></i> <%=  currentUser.username%></a></li>		
+		<li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+
+			 <% } %>
+
+            </ul>
+        </div>
+    </div>
+
+</nav>
+	<div class="container">
+	    <% if(error && error.length > 0){ %>		
+			<div class="alert alert-danger" role="alert">
+                 <%= error %>
+		    </div>
+    </div>
+		  <% } %>
+		 <% if(success && success.length > 0){ %>		
+	<div class="container">
+			<div class="alert alert-success" role="alert">
+                 <%= success %>
+		    </div>
+    </div>
+		  <% } %>
+

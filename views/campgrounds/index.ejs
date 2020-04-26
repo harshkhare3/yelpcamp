@@ -1,0 +1,47 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+    <div class="container">
+        <header class="jumbotron">
+         <h1><i style="color:peru"class="fas fa-campground"></i>Welcome to YelpCamp!</h1>
+           <p>View our hand-picked camp groundd from all over this world</p>
+        <p>
+             <a class="btn btn-primary btn-large"href="/campgrounds/new"> Add New Campgrounds</a>
+         </p>
+	</header>
+ <div class="container-fluid text-center" style="display:flex; flex-wrap:wrap">
+	<div class="col-md-12">
+		<% if (noMatch !== null) { %>
+		  <h3><%=noMatch%></h3>
+		<div class="container fluid" style="width:30%; margin:25px auto;">
+			<form action="/campgrounds" mrthod="GET" class="form-inline">
+			<div class="form-group">
+				<input type="text" name="search" placeholder="Campground Search..." class="form-control" style="margin-right:5px">
+				<input type="submit" value="Search" class="btnbtn-default ">
+			</div>
+		    </form>
+		</div>
+		
+		<%} %>
+	 </div>
+  </div> 
+
+<div class="row text-center" style="display:flex; flex-wrap:wrap;">
+
+<% campgrounds.forEach(function(campground){ %>
+    <div class="col-md-3 col-sm-6">
+        <div class="card" style="margin-bottom:1em;">
+           <img src="<%= campground.image %>" class="card-img-top">
+		<div>	
+			<p class="card-text"><%= campground.name %></p>
+           <span class="badge badge-primary" style="margin-bottom:1em;"><i class="fas fa-thumbs-up"></i> <%= campground.likes.length %></span>
+       </div>
+			
+			<a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More    Info</a>
+		</div>
+     </div>
+
+<% }); %>
+
+</div>
+<%- include("../partials/footer") %>

@@ -1,0 +1,24 @@
+<%- include("./partials/header") %>
+<div class="container">
+  <div class="container-fluid">
+	  <div style="text-align: center ">
+		  <h1>Login !</h1>
+		  <p>Don't have an account?<a href="/register">Sign up!</a></p>
+	  </div> 
+	   <div style="width:30%; margin:25px auto;">
+         <form action="/login" method="POST">
+	       <div class="form-group">
+		      <input class="form-control" type="text" name="username" placeholder="Username">	   
+		   </div>
+	       <div class="form-group" style="margin-bottom:2em;">
+		      <input class="form-control" type="password" name="password" placeholder="Password">	
+		<a class="float-right" href="/forgot">Forgot Password?</a>	 
+		   </div>
+	       <div class="form-group">
+              <input class="btn btn-lg btn-primary btn-block" type="submit" value="Login">
+			 </div>
+	   </form>
+	  <a href="/campgrounds">Go Back</a>
+  </div>	
+</div>
+<%- include("./partials/footer") %>

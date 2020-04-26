@@ -1,0 +1,39 @@
+.figure img{
+    width: 100%;
+}
+.figure{
+	width:100%;
+}
+#fig{
+	margin-top: 2em
+}
+#delete-form{
+	display: inline;
+}
+/* Google Maps */
+#map {
+	margin-top: 2em;
+    height: 400px;
+    width: 100%;
+}
+/*User Bio*/
+.user_fig{
+	padding-right:10%;
+    margin: auto;
+	width:200px;
+	height:240px;
+	margin-bottom:2em;
+	
+}
+
+#profile{
+	max-height: 100%;
+    max-width: 100%;
+}
+
+.foot{
+    position: relative;
+	bottom: 0;
+ }
+
+
