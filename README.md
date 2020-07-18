@@ -12,3 +12,14 @@ The project is developed using following technologies:-
      <li>MongoLab</li>
 </ul>     
 and the database used is MongoDB.
+
+Features :-
+<ul>
+     <li>Facebook Login/Signup</li>
+     <li>Photo upload on Cloudinary (Campground photos and profile picture)</li>
+     <li>Like and Comment on a campground</li>
+     <li>Add a new Campground</li>
+     <li>View other people's profile</li>
+     <li>Change Password feature using Nodemailer</li>
+</ul>
+     
